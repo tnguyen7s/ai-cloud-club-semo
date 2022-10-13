@@ -4,9 +4,9 @@ Thao's favorite food list:
 -
 
 Hannah's favorite food list:
--
--
--
+- Apples
+- Pizza
+- Pretzels
 
 Blake's favorite food list:
 -
