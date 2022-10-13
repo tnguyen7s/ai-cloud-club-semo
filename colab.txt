@@ -19,6 +19,6 @@ Xiao's favorite food list:
 -
 
 Tuyen's favorite food list:
--
--
--
+- fried spring roll
+- Vietnamese pizza
+- Vietnamese spring roll
