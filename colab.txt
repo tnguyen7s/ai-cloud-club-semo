@@ -9,9 +9,9 @@ Hannah's favorite food list:
 -
 
 Blake's favorite food list:
--
--
--
+- Meat Lovers Pizza
+- Tacos
+- Bacon Cheeseburgers
 
 Xiao's favorite food list:
 -
