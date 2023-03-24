@@ -1,0 +1,75 @@
+- Our neural network is basically a mathematical function y = f(W, x) 
+	x is the image (or input to function f)
+	
+	W is a set trained parameters or connection values of neurons
+	
+	-> Once we figure out (or learn) what is W, given an image x, we can compute y 
+	
+	y is a vector of probabilities, each probability predicts how much the image corresponds to a digit
+
+- The process to learn W is called a training or learning process.
+
+- A training process comprises the following steps:
+	
+	(1) compute the loss: L = criterion(props, labels)
+		
+		where criterion is a loss function
+			
+			props is a vector of probabilities predicted by our model for the image
+			
+			labels: are the true labels of the images
+
+	(2) L.backward() computes `gradient` of the loss value with respect to W (W is the set of weights as mentioned earlier)
+	
+		at the end we compute dL/dWi (dWi is derivative of the weight i, dL is derivative of the loss, dL/dWi is the derivative of Loss w.r.t the derivative of the Weight i)
+		
+		=> this process to compute gradients/multiple derivatives using `back probagation`
+
+	(3) then we can updates W using this formula
+		
+		W = W - (dL/dW) * lr
+
+		lr: is the learning rate. how big or small that we want updates the weights. 
+			
+			learning rate can be constant during training 
+			or adaptive (e.g. exponential decay as we train more epochs) 
+			
+			adaptively scheduling the learning rates can make it easier to converge to the smallest loss. 
+			
+			Two popular adaptive optimizers are SGD+Nesterov Momentum or Adam 
+
+
+	
+	Here the loss is not the loss of one image but the averaged loss of the batch of 128 images or an estimated loss
+		
+		=> using an estimated loss is a property of `Stochastic Gradient Descent`, making training (or converge to the steepest point of the loss function) become faster since we don't need to iterate image by image one a time
+		
+		=> dL/dW thus is also not an actual gradient but an estimate gradient (this is why it is Stochastic)
+
+
+
+- So, the psuedocode looks like this:
+
+	for e in range(epochs):
+		for images, labels in data_loader:
+			props = model(images)
+			L = criterion(props, labels)
+		
+			W = W - (dL/dW) * lr
+
+- We can track a history of [loss] on the validation dataset. 
+
+	we can start training with small number of epochs, by ploting the loss history, 
+
+	we can know if the loss is continueing to doing down or become plateau to decide whether to continue training or stop. 
+
+	This is because overtraining can cause overfiting, making model perform well on the training dataset, but perform worse on the testing dataset that it has not seen before.
+
+
+
+
+
+
+	
+	
+		
