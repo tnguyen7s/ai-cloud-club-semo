@@ -1,9 +1,0 @@
-For a hidden layer:
-1. Choose the number of neurons
-2. Determine the shape of the weight_matrix
-#rows = #neurons in the hidden layer
-#cols = #neurons in the previous layer 
-3. Choose values for the connection weights (in other words, populate the weight matrix)
-4. Compute weighted sums for each neuron, neuron i = weight_matrix[at row_i]*previous_layer_vector
-5. Pass weighted sums to the non-linear function. Here we use Relu: y = max(0,x)
-6. Values from step 5 are the values for our hidden layer neurons
